@@ -1,4 +1,5 @@
 #include <ZombieEvent.hpp>
+#include <ctime>
 
 Zombie::Zombie(void) {
 	std::cout << "New Zombie!" << std::endl;
@@ -10,6 +11,7 @@ Zombie::~Zombie(void) {
 
 int main(void) {
 	ZombieEvent zEvent = ZombieEvent();
+	srand(time(NULL));
 
 	zEvent.setZombieType("Random");
 	zEvent.randomChump();
