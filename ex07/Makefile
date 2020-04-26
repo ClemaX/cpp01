@@ -4,6 +4,10 @@ SDIR	=	.
 SRCS	=	$(addprefix $(SDIR)/, main.cpp)
 CC		=	clang++
 CFLAGS	=	-Wall -Wextra -Werror
+TSTIN	=	test.txt
+TSTOUT	=	$(TSTIN).replace
+TSTSRCH	=	hunter2
+TSTRPLC	=	*******
 
 all:		$(NAME)
 
@@ -13,7 +17,11 @@ $(NAME):	$(SRCS)
 re: fclean all
 
 clean:
-	@echo "Nothing to clean"
+	rm -f $(TSTOUT)
 
-fclean:
+fclean: clean
 	rm -f $(NAME)
+
+test: all
+	./$(NAME) "$(TSTIN)" "$(TSTSRCH)" "$(TSTRPLC)"
+	cat "$(TSTIN)" | sed "s|$(TSTSRCH)|$(TSTRPLC)|g" | diff - $(TSTOUT)
