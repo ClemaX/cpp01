@@ -4,13 +4,17 @@
 # include <string>
 # include <iostream>
 
-class Pony {
+class Pony
+{
 public:
 	int age;
 	std::string name;
 	std::string breed;
 	std::string color;
 	bool hypoallergenic;
+
+	Pony(void);
+	~Pony(void);
 
 	void identify(void);
 };
