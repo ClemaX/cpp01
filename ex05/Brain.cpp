@@ -8,7 +8,7 @@ std::array<std::string, 6> Brain::thoughts = {
 	"If elevators hadn't been invented, all the CEOs and important people would have their offices on the first floor as a sign of status.",
 	"Pavlov probably thought about feeding his dogs every time someone rang a bell."};
 
-std::string Brain::identify(void)
+const std::string Brain::identify(void) const
 {
 	std::ostringstream ss;
 
@@ -17,7 +17,7 @@ std::string Brain::identify(void)
 	return (ss.str());
 }
 
-void Brain::think(void)
+void Brain::think(void) const
 {
 	std::cout << "( ु⁎ᴗ_ᴗ⁎)ु.｡oO(" << thoughts[rand() % thoughts.size()] << ')' << std::endl;
 }

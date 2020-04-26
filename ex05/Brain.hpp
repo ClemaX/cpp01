@@ -14,8 +14,8 @@ public:
 	Brain(void);
 	~Brain(void);
 
-	std::string identify(void);
-	void think(void);
+	const std::string identify(void) const;
+	void think(void) const;
 };
 
 
