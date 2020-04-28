@@ -1,7 +1,7 @@
 #include "Logger.hpp"
 
 Logger::Logger(std::string filePath)
-	: logFile(filePath)
+	: logFile(filePath, std::ios_base::app)
 {
 	if (!logFile.is_open())
 		std::cerr << "Could not open log file at \"" << filePath << '"' << std::endl;
