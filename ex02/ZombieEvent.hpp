@@ -1,20 +1,26 @@
-#ifndef ZOMBIE_EVENT_H
-# define ZOMBIE_EVENT_H
+#pragma once
 
-# include <Zombie.hpp>
-# include <array>
-# include <cstdlib>
+#include <Zombie.hpp>
+#include <cstdlib>
 
 class ZombieEvent {
-public:
-	void setZombieType(std::string value);
-
-	Zombie *newZombie(std::string name);
-
-	void randomChump(void);
-
 private:
-	std::string type;
-};
+	static const std::string	names[];
+	static const size_t			name_count;
+	std::string					type;
 
-#endif
+public:
+	ZombieEvent();
+	~ZombieEvent();
+
+	ZombieEvent(std::string type);
+	ZombieEvent(const ZombieEvent &val);
+
+	ZombieEvent &operator=(const ZombieEvent &val);
+
+	void	setZombieType(std::string value);
+
+	Zombie	*newZombie(std::string name) const;
+
+	void	randomChump(void) const;
+};

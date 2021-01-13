@@ -1,17 +1,22 @@
-#ifndef ZOMBIE_H
-# define ZOMBIE_H
+#pragma once
 
-# include <string>
-# include <iostream>
+#include <string>
+#include <iostream>
 
-class Zombie {
+class Zombie
+{
 public:
-	Zombie();
-	~Zombie();
 	std::string type;
 	std::string name;
 
-	void announce(void);
+	Zombie();
+	~Zombie();
+
+	Zombie(std::string type, std::string name);
+	Zombie(const Zombie &val);
+
+	Zombie &operator=(const Zombie &val);
+
+	void announce(void) const;
 };
 
-#endif

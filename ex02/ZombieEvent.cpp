@@ -1,19 +1,41 @@
 #include <ZombieEvent.hpp>
 
-void ZombieEvent::setZombieType(std::string value) {
+ZombieEvent::ZombieEvent()
+	: type("")
+{
+	std::cout << "Creating ZombieEvent!" << std::endl;
+}
+
+ZombieEvent::~ZombieEvent()
+{
+	std::cout << "Destroying ZombieEvent!" << std::endl;
+}
+
+ZombieEvent::ZombieEvent(std::string type)
+	: type(type)
+{
+	std::cout << "Creating ZombieEvent!" << std::endl;
+}
+
+ZombieEvent	&ZombieEvent::operator=(const ZombieEvent &val)
+{
+	type = val.type;
+	return (*this);
+}
+
+void ZombieEvent::setZombieType(std::string value)
+{
 	type = value;
 }
 
-Zombie *ZombieEvent::newZombie(std::string name) {
-	Zombie *z = new Zombie();
-
-	z->name = name;
-	z->type = type;
+Zombie *ZombieEvent::newZombie(std::string name) const
+{
+	Zombie *z = new Zombie(type, name);
 
 	return (z);
 }
 
-std::array<std::string, 10> names = {
+const std::string ZombieEvent::names[] = {
 	"Johnnie",
 	"Ella-Louise",
 	"Cerys",
@@ -26,10 +48,10 @@ std::array<std::string, 10> names = {
 	"Ellie-May"
 };
 
-void ZombieEvent::randomChump(void) {
-	Zombie z = Zombie();
+void ZombieEvent::randomChump(void) const
+{
+	const size_t random_index = rand() % (sizeof(names) / sizeof(*names));
+	const Zombie z = Zombie(type, names[random_index]);
 
-	z.name = names[rand() % names.size()];
-	z.type = type;
 	z.announce();
 }
