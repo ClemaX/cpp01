@@ -10,5 +10,7 @@ void memoryLeak(void) {
 
 int main(void) {
 	memoryLeak();
+	std::cout << "Press enter to continue...";
+	getchar();
 	return (0);
 }
