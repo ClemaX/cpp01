@@ -1,4 +1,4 @@
-#include <ZombieEvent.hpp>
+#include "ZombieEvent.hpp"
 
 ZombieEvent::ZombieEvent()
 	: type("")
