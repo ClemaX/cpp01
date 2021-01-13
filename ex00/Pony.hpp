@@ -1,22 +1,29 @@
-#ifndef PONY_H
-# define PONY_H
+#pragma once
 
-# include <string>
-# include <iostream>
+#include <string>
+#include <iostream>
 
 class Pony
 {
-public:
+private:
 	int age;
 	std::string name;
 	std::string breed;
 	std::string color;
 	bool hypoallergenic;
 
-	Pony(void);
-	~Pony(void);
+public:
 
-	void identify(void);
+	
+	Pony(int age, std::string name, std::string breed, std::string color,
+		bool hypoallergenic);
+
+	Pony::Pony(const Pony &val);
+
+	Pony();
+	~Pony();
+
+	Pony &operator=(const Pony &val);
+
+	void identify(void) const;
 };
-
-#endif

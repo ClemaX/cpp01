@@ -1,15 +1,13 @@
-#include <Pony.hpp>
-#include <stack>
+#include "Pony.hpp"
 
 void ponyOnTheHeap(void)
 {
-	Pony *heapPony = new Pony();
-
-	heapPony->age = 2;
-	heapPony->breed = "Heap-allocated Object";
-	heapPony->color = "chestnut";
-	heapPony->name = "Hidalgo";
-	heapPony->hypoallergenic = false;
+	Pony *heapPony = new Pony(
+		2,
+		"Heap-allocated Object", "chestnut",
+		"Hidalgo",
+		false
+	);
 
 	heapPony->identify();
 
@@ -18,19 +16,28 @@ void ponyOnTheHeap(void)
 
 void ponyOnTheStack(void)
 {
-	Pony stackPony = Pony();
-
-	stackPony.age = 1;
-	stackPony.breed = "Stack-allocated Object";
-	stackPony.color = "pink";
-	stackPony.name = "Starlight";
-	stackPony.hypoallergenic = true;
+	Pony stackPony = Pony(
+		1,
+		"Stack-allocated Object",
+		"pink",
+		"Starlight",
+		true
+	);
 
 	stackPony.identify();
 }
 
 int main(void)
 {
-	ponyOnTheHeap();
+	try 
+	{
+		ponyOnTheHeap();
+	}
+	catch(std::bad_alloc &ex)
+	{
+		std::cerr << "Allocation error!" << std::endl;
+		return (1);
+	}
 	ponyOnTheStack();
+	return (0);
 }
