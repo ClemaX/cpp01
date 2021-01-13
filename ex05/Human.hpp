@@ -1,7 +1,6 @@
-#ifndef HUMAN_H
-# define HUMAN_H
+#pragma once
 
-# include <Brain.hpp>
+#include "Brain.hpp"
 
 class Human
 {
@@ -11,8 +10,10 @@ public:
 	Human();
 	~Human();
 
+	Human(const Human &val);
+
+	Human &operator=(const Human &val);
+
 	std::string identify(void);
 	const Brain &getBrain(void) const;
 };
-
-#endif

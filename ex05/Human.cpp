@@ -1,4 +1,4 @@
-#include <Human.hpp>
+#include "Human.hpp"
 
 Human::Human(void)
 {
@@ -9,6 +9,18 @@ Human::Human(void)
 Human::~Human(void)
 {
 	std::cout << "Destroying Human!" << std::endl;
+}
+
+Human::Human(const Human &val)
+	: brain(val.brain)
+{
+
+}
+
+Human &Human::operator=(const Human &val)
+{
+	(void) val;
+	return (*this);
 }
 
 std::string Human::identify(void)
