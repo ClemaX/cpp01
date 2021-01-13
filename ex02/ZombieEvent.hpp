@@ -6,7 +6,6 @@
 class ZombieEvent {
 private:
 	static const std::string	names[];
-	static const size_t			name_count;
 	std::string					type;
 
 public:
