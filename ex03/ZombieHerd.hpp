@@ -1,20 +1,22 @@
-#ifndef ZOMBIE_HERD_H
-# define ZOMBIE_HERD_H
+#pragma once
 
-# include <Zombie.hpp>
-# include <array>
+#include <Zombie.hpp>
 
 class ZombieHerd
 {
-public:
-	ZombieHerd(int N);
-	~ZombieHerd(void);
-
-	void announce(void);
-
 private:
-	int nbZombies;
-	Zombie *zombies;
-};
+	static const std::string	names[];
+	int							nbZombies;
+	Zombie						*zombies;
 
-#endif
+public:
+	ZombieHerd();
+	~ZombieHerd();
+
+	ZombieHerd(int N);
+	ZombieHerd(const ZombieHerd &val);
+
+	ZombieHerd	&operator=(const ZombieHerd &val);
+
+	void announce(void) const;
+};
