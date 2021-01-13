@@ -1,11 +1,11 @@
-#ifndef LOGGER_H
-# define LOGGER_H
+#pragma once
 
-# include <string>
-# include <iostream>
-# include <iomanip>
-# include <fstream>
-# include <ctime>
+#include <string>
+#include <sstream>
+#include <iostream>
+#include <iomanip>
+#include <fstream>
+#include <ctime>
 
 class Logger
 {
@@ -29,6 +29,3 @@ private:
 	void logToConsole(std::string const &message);
 	void logToFile(std::string const &message);
 };
-
-
-#endif
