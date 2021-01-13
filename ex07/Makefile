@@ -1,18 +1,21 @@
-NAME	=	replace
-HDIR	=	.
-SDIR	=	.
-SRCS	=	$(addprefix $(SDIR)/, main.cpp)
-CC		=	clang++
-CFLAGS	=	-Wall -Wextra -Werror
-TSTIN	=	test.txt
-TSTOUT	=	$(TSTIN).replace
-TSTSRCH	=	hunter2
-TSTRPLC	=	*******
+NAME		=	replace
+
+SDIR		=	.
+
+SRCS		=	$(addprefix $(SDIR)/, main.cpp)
+
+CXX			=	clang++
+CXXFLAGS	=	-Wall -Wextra -Werror -pedantic -std=c++98
+
+TSTIN		=	test.txt
+TSTOUT		=	$(TSTIN).replace
+TSTSRCH		=	hunter2
+TSTRPLC		=	*******
 
 all:		$(NAME)
 
 $(NAME):	$(SRCS)
-	$(CC) $(CFLAGS) -I$(HDIR) $^ -o $@
+	$(CXX) $(CPPFLAGS) $^ -o $@
 
 re: fclean all
 
