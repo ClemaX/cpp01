@@ -29,7 +29,7 @@ void ponyOnTheStack(void)
 
 int main(void)
 {
-	try 
+	try
 	{
 		ponyOnTheHeap();
 	}
