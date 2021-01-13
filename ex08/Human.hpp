@@ -1,5 +1,4 @@
-#ifndef HUMAN_H
-#define HUMAN_H
+#pragma once
 
 #include <string>
 #include <iostream>
@@ -15,5 +14,3 @@ private:
 public:
 	void action(std::string const &action_name, std::string const &target);
 };
-
-#endif
