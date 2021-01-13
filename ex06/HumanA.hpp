@@ -1,8 +1,8 @@
-#ifndef HUMAN_A_H
-# define HUMAN_A_H
+#pragma once
 
-# include <Weapon.hpp>
-# include <iostream>
+#include <iostream>
+
+#include "Weapon.hpp"
 
 class HumanA
 {
@@ -11,9 +11,12 @@ private:
 	const Weapon &weapon;
 
 public:
+	~HumanA();
+
 	HumanA(std::string n, const Weapon &w);
+	HumanA(const HumanA &val);
 
-	void attack(void);
+	HumanA	&operator=(const HumanA &val);
+
+	void attack(void) const;
 };
-
-# endif
