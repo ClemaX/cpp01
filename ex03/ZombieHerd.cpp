@@ -1,4 +1,4 @@
-#include <ZombieHerd.hpp>
+#include "ZombieHerd.hpp"
 
 const std::string ZombieHerd::names[] = {
 	"Johnnie",
