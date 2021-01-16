@@ -14,11 +14,11 @@ private:
 
 public:
 
-	
+
 	Pony(int age, std::string name, std::string breed, std::string color,
 		bool hypoallergenic);
 
-	Pony::Pony(const Pony &val);
+	Pony(const Pony &val);
 
 	Pony();
 	~Pony();
