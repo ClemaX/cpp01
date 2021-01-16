@@ -35,7 +35,8 @@ Zombie *ZombieEvent::newZombie(std::string name) const
 	return (z);
 }
 
-const std::string ZombieEvent::names[] = {
+const std::string ZombieEvent::names[] =
+{
 	"Johnnie",
 	"Ella-Louise",
 	"Cerys",

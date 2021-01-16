@@ -3,7 +3,8 @@
 #include "Zombie.hpp"
 #include <cstdlib>
 
-class ZombieEvent {
+class ZombieEvent
+{
 private:
 	static const std::string	names[];
 	std::string					type;
